@@ -191,7 +191,7 @@
   "outputs": {
     "ip": {
       "type": "string",
-      "value": "[reference(variables('dNetworkName')).outputs.network.value.ip]"
+      "value": "[reference(variables('dNetworkName')).outputs.network.value.ip.ipAddress]"
     }
   }
 }
