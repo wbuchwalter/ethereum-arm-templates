@@ -403,7 +403,8 @@
       "value": {
         "name": "[variables('virtualNetworkName')]",
         "id": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
-        "ip": "[reference(variables('publicIpName'))]",
+        "publicIp": "[reference(variables('publicIpName')).ipAddress]",
+        "internalIp": "[reference(variables('internalLoadBalancerName')).frontEndIpConfigurations[0].properties.privateIPAddress]",
         "public": {
           "id": "[variables('publicLoadBalancerId')]",
           "poolId": "[variables('publicLoadBalancer').backendPoolId]",

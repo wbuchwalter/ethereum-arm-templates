@@ -247,7 +247,7 @@
           "args": {
             "value": [
               "[substring(uniqueString(reference(variables('dNetworkName')).outputs.network.value.id),0,10)]",
-              "[reference(variables('dNetworkName')).outputs.network.value.ip.ipAddress]",
+              "[reference(variables('dNetworkName')).outputs.network.value.publicIp]",
               "[parameters('dashboardIp')]",
               "[parameters('registrarIp')]",
               "[string(reference(variables('dMinerProperties')).outputs.result.value.cores)]"
@@ -398,7 +398,7 @@
     "Member": {
       "type": "object",
       "value": {
-        "ip": "[reference(variables('dNetworkName')).outputs.network.value.ip.ipAddress]"
+        "ip": "[reference(variables('dNetworkName')).outputs.network.value.publicIp]"
       }
     }
   }
